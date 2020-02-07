@@ -30,8 +30,19 @@ pipeline {
                 }
             }
    }
-      
+   stage('hi'){
+		parallel{
+			stage('A') {
+				steps{
+					sh 'echo "AAA"'
+				}
+			}
+			stage('B') {
+				steps{
+					sh 'echo "BBB"'
+				}
+			}
+		}
    }
-   
-   
+   }
 }
